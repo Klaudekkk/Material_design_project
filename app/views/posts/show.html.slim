@@ -1,0 +1,18 @@
+.row
+  .col.s12.m8
+    .card
+      .card-image
+        = image_tag "sample-1.jpg"
+        span.card-title = @post.title
+        a.btn-floating.halfway-fab.waves-effect.waves-light.red href="#{edit_post_path(@post)}"
+          i.material-icons edit
+      .card-content
+        p = @post.body
+        p
+          strong Published:
+          = @post.published
+
+        - if @post.images.present?
+          p 
+            strong Images
+            = image_tag @post.images.first
