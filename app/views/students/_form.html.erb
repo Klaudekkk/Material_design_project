@@ -25,6 +25,20 @@
             </div>
             <div class="row">
               <div class="input-field col s12">
+                <%= f.password_field :password, placeholder: "Hasło" %>
+                <%= f.label :password %>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.password_field :password_confirmation, placeholder: "powtorz haslo" %>
+                <%= f.label :password_confirmation %>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
                 <button class="btn pink lighten-3 waves-effect waves-light" type="submit" name="action">
                   <%= f.submit(@student.new_record? ? "Sign up" : "Submit Updates") %>
                 </button>
