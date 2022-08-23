@@ -6,3 +6,10 @@
 //= require datatables
 //= require init
 //= require activestorage
+
+
+$( document ).on('turbolinks:load', function(){
+    $(".dropdown-trigger").dropdown();
+    $('#fade-out-target').fadeOut(4000);
+})
+

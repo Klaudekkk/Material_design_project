@@ -1,0 +1,56 @@
+<% if @student.errors.any? %>
+  <div class="container">
+    <div class="row sign-up-form">
+      <div class="col s12 m12 l12">
+        <div class="card-panel red lighten-2">
+          <span class="white-text">
+              <% if @student.errors.count == 1 %>
+                1 błąd przy tworzeniu konta
+              <% elsif @student.errors.count > 1 %>
+                  <%= @student.errors.count %> błędy przy tworzeniu konta
+                <% end %>
+                        <ul>
+                  <% @student.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>
+
+<div class="container">
+  <div class="row center sign-up-form">
+    <div class="col s12 m12 l12">
+      <div class="card-panel">
+        <h3 class="header">Sign up!</h3>
+        <div class="row">
+          <%= form_for(@student, html: { class: "col s12" }) do |f| %>
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.text_field :name, placeholder: "Podaj swoje imię", autofocus: true %>
+                <%= f.label :name %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.email_field :email, placeholder: "Podaj email" %>
+                <%= f.label :email %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <button class="btn pink lighten-3 waves-effect waves-light" type="submit" name="action">
+                  <%= f.submit "Submit" %>
+                </button>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<header>
+  <ul id="dropdown" class="dropdown-content">
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+  </ul>
+  <nav>
+    <div class="container">
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li> <%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'About', about_path %></li>
+          <li><%= link_to 'New', courses_new_path %></li>
+          <li>
+            <a class="dropdown-trigger" href="#!" data-target="dropdown">Dropdown<i class="material-icons right">arrow_drop_down</i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <% flash.each do |key, message| %>
+    <div class="container">
+      <div class="row sign-up-form">
+        <div class="col s12 m12 l12">
+          <div class="card-panel green lighten-2" id="fade-out-target">
+          <span class="white-text">
+            <%= message %>
+          </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</header>
